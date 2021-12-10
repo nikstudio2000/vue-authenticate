@@ -1,7 +1,7 @@
 {
   "name": "vue-authenticate",
   "version": "1.5.0",
-  "description": "Authentication library for Vue.js",
+  "description": "NS fork of Authentication library for Vue.js",
   "main": "dist/vue-authenticate.common.js",
   "module": "dist/vue-authenticate.esm.js",
   "unpkg": "dist/vue-authenticate.js",
@@ -22,13 +22,13 @@
     "oauth2"
   ],
   "author": {
-    "name": "Davor Grubelic",
+    "name": "NS fork of Davor Grubelic",
     "email": "davor.grubelic@gmail.com",
     "url": "https://dgrubelic.me"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dgrubelic/vue-authenticate.git"
+    "url": "https://github.com/nikstudio2000/vue-authenticate.git"
   },
   "files": [
     "dist"

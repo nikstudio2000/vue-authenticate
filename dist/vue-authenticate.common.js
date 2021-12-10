@@ -2,7 +2,7 @@
  * vue-authenticate v1.5.0
  * https://github.com/dgrubelic/vue-authenticate
  * Released under the MIT License.
- * 
+ *
  */
 
 'use strict';
@@ -545,11 +545,11 @@ const fakeWindow = {
   },
 };
 
-const $document = (typeof document !== undefined)
+const $document = (typeof document !== 'undefined')
   ? document
   : fakeDocument;
 
-const $window = (typeof window !== undefined)
+const $window = (typeof window !== 'undefined')
   ? window
   : fakeWindow;
 
