@@ -1,5 +1,5 @@
 /**
- * vue-authenticate v1.5.2
+ * vue-authenticate v1.5.3
  * https://github.com/dgrubelic/vue-authenticate
  * Released under the MIT License.
  * 
@@ -555,11 +555,11 @@
     },
   };
 
-  var $document = (typeof document !== undefined)
+  var $document = (typeof document !== 'undefined')
     ? document
     : fakeDocument;
 
-  var $window = (typeof window !== undefined)
+  var $window = (typeof window !== 'undefined')
     ? window
     : fakeWindow;
 
@@ -891,16 +891,13 @@
         } catch (e$1) {}
 
       case 'cookieStorage':
-        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
         return new CookieStorage(options.cookieStorage);
 
       case 'customStorage':
-        console.log('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
         return options.customStorage;
 
       case 'memoryStorage':
       default:
-        console.log('ccccccccccccccccccccccccccccccccccccc: ', options);
         return new MemoryStorage(options.storageNamespace);
     }
   }
