@@ -23,6 +23,9 @@ export default function StorageFactory(options) {
     case 'cookieStorage':
       return new CookieStorage(options.cookieStorage);
 
+    case 'customStorage':
+      return options.customStorage;
+
     case 'memoryStorage':
     default:
       return new MemoryStorage(options.storageNamespace);
