@@ -1,5 +1,5 @@
 /**
- * vue-authenticate v1.5.0
+ * vue-authenticate v1.5.2
  * https://github.com/dgrubelic/vue-authenticate
  * Released under the MIT License.
  * 
@@ -8,7 +8,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.VueAuthenticate = factory());
+  (global = global || self, global.VueAuthenticate = factory());
 }(this, (function () { 'use strict';
 
   if (typeof Object.assign != 'function') {
@@ -891,10 +891,16 @@
         } catch (e$1) {}
 
       case 'cookieStorage':
+        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
         return new CookieStorage(options.cookieStorage);
+
+      case 'customStorage':
+        console.log('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
+        return options.customStorage;
 
       case 'memoryStorage':
       default:
+        console.log('ccccccccccccccccccccccccccccccccccccc: ', options);
         return new MemoryStorage(options.storageNamespace);
     }
   }
@@ -997,7 +1003,7 @@
     return options.join(',');
   };
 
-  var defaultProviderConfig$1 = {
+  var defaultProviderConfig = {
     name: null,
     url: null,
     authorizationEndpoint: null,
@@ -1014,7 +1020,7 @@
   var OAuth = function OAuth($http, storage, providerConfig, options) {
     this.$http = $http;
     this.storage = storage;
-    this.providerConfig = objectExtend({}, defaultProviderConfig$1);
+    this.providerConfig = objectExtend({}, defaultProviderConfig);
     this.providerConfig = objectExtend(this.providerConfig, providerConfig);
     this.options = options;
   };
@@ -1125,7 +1131,7 @@
    * Default provider configuration
    * @type {Object}
    */
-  var defaultProviderConfig = {
+  var defaultProviderConfig$1 = {
     name: null,
     url: null,
     clientId: null,
@@ -1150,7 +1156,7 @@
   var OAuth2 = function OAuth2($http, storage, providerConfig, options) {
     this.$http = $http;
     this.storage = storage;
-    this.providerConfig = objectExtend({}, defaultProviderConfig);
+    this.providerConfig = objectExtend({}, defaultProviderConfig$1);
     this.providerConfig = objectExtend(this.providerConfig, providerConfig);
     this.options = options;
   };
@@ -1218,7 +1224,7 @@
     var payload = objectExtend({}, userData);
 
     for (var key in this.providerConfig.responseParams) {
-      this.providerConfig.responseParams[key];
+      var value = this.providerConfig.responseParams[key];
 
       switch (key) {
         case 'code':

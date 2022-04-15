@@ -21,13 +21,16 @@ export default function StorageFactory(options) {
       } catch (e) {}
 
     case 'cookieStorage':
+      console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
       return new CookieStorage(options.cookieStorage);
 
     case 'customStorage':
+      console.log('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
       return options.customStorage;
 
     case 'memoryStorage':
     default:
+      console.log('ccccccccccccccccccccccccccccccccccccc: ', options)
       return new MemoryStorage(options.storageNamespace);
       break;
   }
