@@ -1,6 +1,6 @@
 {
-  "name": "vue-authenticate",
-  "version": "1.5.4",
+  "name": "vue-authenticate-ns",
+  "version": "1.5.5",
   "description": "NS fork of Authentication library for Vue.js",
   "main": "dist/vue-authenticate.common.js",
   "module": "dist/vue-authenticate.esm.js",
